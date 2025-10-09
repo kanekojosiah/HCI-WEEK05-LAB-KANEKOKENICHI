@@ -1,0 +1,112 @@
+:root{
+  --bg-grad: linear-gradient(135deg,#0f1724 0%, #1f3a4a 50%, #2b6aa3 100%);
+  --card: rgba(255,255,255,0.04);
+  --text: #e8f0ff;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color:var(--text);
+  background:var(--bg-grad);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:18px;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-radius:10px;
+}
+.brand{font-weight:700}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:12px;
+  font-weight:500;
+}
+
+main{
+  display:flex;
+  gap:20px;
+  max-width:900px;
+  width:100%;
+  margin:0 auto;
+}
+#featured{
+  flex:1;
+  background:var(--card);
+  padding:14px;
+  border-radius:10px;
+}
+.books{list-style:none;padding:0;margin:0}
+.books li{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 6px;
+  border-bottom:1px solid rgba(255,255,255,0.02);
+}
+aside{
+  width:180px;
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+}
+
+section#about, footer{
+  max-width:900px;
+  margin:0 auto;
+  background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);
+  padding:10px;
+  border-radius:8px;
+  text-align:center;
+}
+
+@media (max-width:720px){
+  main{flex-direction:column}
+  aside{width:100%}
+  nav a{margin-left:8px}
+}
+
+/* header layout */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-radius:10px;
+}
+
+/* brand (logo + title) */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* logo image */
+.logo-img{
+  width:48px;        /* size for logo */
+  height:48px;
+  object-fit:contain;
+  border-radius:6px; /* optional rounded corners */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35); /* subtle depth */
+}
+
+/* title + small tagline */
+.site-title{ font-weight:700; font-size:18px; }
+.tag{ font-size:12px; opacity:0.8; margin-top:2px; }
+
+/* mobile: shrink logo */
+@media (max-width:480px){
+  .logo-img{ width:40px; height:40px; }
+  .site-title{ font-size:16px; }
+}
